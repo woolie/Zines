@@ -1,0 +1,24 @@
+// Xcode settings for Woolsoft macOS projects, debug configuration
+
+#include "common.xcconfig"
+
+ONLY_ACTIVE_ARCH = NO
+INFOPLIST_FILE = Kernel/Info.plist
+PRODUCT_BUNDLE_IDENTIFIER = com.woolsoft.Kernel
+PRODUCT_NAME = Kernel
+ENABLE_TESTABILITY = NO
+VALIDATE_PRODUCT = YES
+// Don't strip binaries that are copied as part of the packaging process.
+// They're generally signed during build, so we shouldn't modify them afterwards.
+// (In fact the build system refuses to, so having this set to YES just causes a warning.)
+// This is not supposed to affect the final binary (app) -- that's STRIP_INSTALLED_PRODUCT.
+COPY_PHASE_STRIP = NO
+GCC_OPTIMIZATION_LEVEL = s
+BITCODE_GENERATION_MODE = bitcode
+ENABLE_NS_ASSERTIONS = NO
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) NDEBUG=1
+SWIFT_COMPILATION_MODE = wholemodule
+SWIFT_OPTIMIZATION_LEVEL = -Owholemodule
+MTL_ENABLE_DEBUG_INFO = NO
+
+DEVELOPMENT_TEAM = XXX

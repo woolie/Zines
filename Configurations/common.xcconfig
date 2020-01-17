@@ -1,0 +1,9 @@
+// Xcode settings for all Woolsoft macOS targets
+
+// NB: I am simply using the Kernel's version of the common config file.
+// It can act as our baseline. This saves us from using some kind of source-only dependency just for this one thing.
+// Obviously this can be revisited as needs change.
+
+#include "../Frameworks/Kernel/Configurations/common.xcconfig"
+
+APPLICATION_EXTENSION_API_ONLY = NO
